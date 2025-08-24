@@ -40,10 +40,11 @@
 
 		<!-- MySQL Connector (instead of PostgreSQL) -->
 		<dependency>
-			<groupId>com.mysql</groupId>
-			<artifactId>mysql-connector-j</artifactId>
-			<scope>runtime</scope>
-		</dependency>
+  <groupId>org.postgresql</groupId>
+  <artifactId>postgresql</artifactId>
+  <scope>runtime</scope>
+</dependency>
+
 
 		<!-- Email Support -->
 		<dependency>
