@@ -7,6 +7,7 @@ public class StudentInfoDto {
 	private String name;
 	private String program;
 	private String branch;
+	private String section;
 	private String year;
 	private String contactno;
 	private String emailaddress;
@@ -42,6 +43,13 @@ public class StudentInfoDto {
 	}
 	public void setBranch(String branch) {
 		this.branch = branch;
+	}
+	
+	public String getSection() {
+		return section;
+	}
+	public void setSection(String section) {
+		this.section = section;
 	}
 	public String getYear() {
 		return year;

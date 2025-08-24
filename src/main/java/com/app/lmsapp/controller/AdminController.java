@@ -161,6 +161,7 @@ public class AdminController {
 			material.setProgram(dto.getProgram());;
 			material.setBranch(dto.getBranch());
 			material.setYear(dto.getYear());
+			material.setSection(dto.getSection());
 			material.setSubject(dto.getSubject());
 			material.setTopic(dto.getTopic());
 			material.setMaterialtype(dto.getMaterialtype());

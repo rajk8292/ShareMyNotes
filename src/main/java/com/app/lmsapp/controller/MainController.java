@@ -2,7 +2,7 @@ package com.app.lmsapp.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Optional;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.app.lmsapp.API.EmailService;
 import com.app.lmsapp.dto.AdminInfoDto;
 import com.app.lmsapp.dto.EmailSendDto;
 import com.app.lmsapp.dto.StudentInfoDto;
@@ -40,8 +39,6 @@ public class MainController {
 	@Autowired
 	EmailRepository esrepo;
 
-	@Autowired
-	private EmailService emailService;
 
 	@GetMapping("/")
 	public String showIndex() {
@@ -66,7 +63,6 @@ public class MainController {
 				eninfo.setEmail(dto.getEmail());
 				eninfo.setMessage(dto.getMessage());
 				esrepo.save(eninfo);
-				emailService.SendEmail(dto.getName(), dto.getEmail(), dto.getMessage());
 				attrib.addFlashAttribute("msg", "Send your message Successfully");
 				return "redirect:/contactus";
 			} catch (Exception e) {
@@ -91,6 +87,7 @@ public class MainController {
 			stdinfo.setName(dto.getName());
 			stdinfo.setProgram(dto.getProgram());
 			stdinfo.setBranch(dto.getBranch());
+			stdinfo.setSection(dto.getSection());
 			stdinfo.setYear(dto.getYear());
 			stdinfo.setContactno(dto.getContactno());
 			stdinfo.setEmailaddress(dto.getEmailaddress());
@@ -100,7 +97,7 @@ public class MainController {
 			String regdate = df.format(dt);
 			stdinfo.setRegdate(regdate);
 			stdrepo.save(stdinfo);
-			attrib.addFlashAttribute("msg", "Registration Successfull! and Send mail on your E-mail");
+			attrib.addFlashAttribute("msg", "Registration Successfull!");
 			return "redirect:/registration";
 		} catch (Exception e) {
 			attrib.addFlashAttribute("msg", "something went Wrong" + e.getMessage());

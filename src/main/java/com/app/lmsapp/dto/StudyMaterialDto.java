@@ -14,6 +14,7 @@ public class StudyMaterialDto {
 	private String program;
 	private String branch;
 	private String year;
+	private String section;
 	private String  materialtype;
 	private String subject;
 	private String topic;
@@ -41,6 +42,13 @@ public class StudyMaterialDto {
 	}
 	public void setBranch(String branch) {
 		this.branch = branch;
+	}
+	
+	public String getSection() {
+		return section;
+	}
+	public void setSection(String section) {
+		this.section = section;
 	}
 	public String getYear() {
 		return year;

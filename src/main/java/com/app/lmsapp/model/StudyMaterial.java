@@ -31,6 +31,10 @@ public class StudyMaterial {
 	public void setBranch(String branch) {
 		this.branch = branch;
 	}
+	public void setSection(String section) {
+		this.section = section;
+	}
+	
 	public String getYear() {
 		return year;
 	}
@@ -76,6 +80,8 @@ public class StudyMaterial {
 	private String branch;
 	@Column(nullable=false,length=50)
 	private String year;
+	@Column(nullable=false,length=100)
+	private String section;
 	@Column(nullable=false,length=100)
 	private String  materialtype;
 	@Column(nullable=false,length=200)

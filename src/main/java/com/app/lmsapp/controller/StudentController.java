@@ -98,8 +98,9 @@ public class StudentController {
 	    String program = st.getProgram();
 	    String branch = st.getBranch();
 	    String year = st.getYear();
+	    String section = st.getSection();
 	    String materialtype = "studymaterial";
-	    List<StudyMaterial> smlist = smrepo.findAllbyType(program, branch, year, materialtype);
+	    List<StudyMaterial> smlist = smrepo.findAllbyType(program, branch, year, materialtype, section);
 	    if (smlist == null || smlist.isEmpty()) {
 	        System.out.println("No study materials found for Program: " + program + ", Branch: " + branch + ", Year: " + year);
 	    } else {
@@ -118,8 +119,9 @@ public class StudentController {
 			String program = st.getProgram();
 			String branch = st.getBranch();
 			String year = st.getYear();
+			String section=st.getSection();
 			String materialtype="important";
-			List<StudyMaterial> smlist = smrepo.findAllbyType(program,branch,year,materialtype);
+			List<StudyMaterial> smlist = smrepo.findAllbyType(program,branch,year,materialtype,section);
 			model.addAttribute("smlist", smlist);
 			return "student/important";
 		}else {

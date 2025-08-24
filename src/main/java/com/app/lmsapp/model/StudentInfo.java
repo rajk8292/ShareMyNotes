@@ -18,6 +18,8 @@ public class StudentInfo {
 	@Column(length=50, nullable=false)
 	private String branch;
 	@Column(length=50, nullable=false)
+	private String section;
+	@Column(length=50, nullable=false)
 	private String year;
 	@Column(length=50, nullable=false)
 	private String emailaddress;
@@ -61,6 +63,12 @@ public class StudentInfo {
 		this.branch = branch;
 	}
 	
+	public String getSection() {
+		return section;
+	}
+	public void setSection(String section) {
+		this.section = section;
+	}
 	public String getEmailaddress() {
 		return emailaddress;
 	}

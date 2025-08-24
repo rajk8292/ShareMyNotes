@@ -15,8 +15,8 @@ import com.app.lmsapp.model.StudyMaterial;
 @Repository
 public interface StudyMaterialRepository extends JpaRepository<StudyMaterial, Integer> {
 
-	@Query("select m from StudyMaterial m where m.program=:program and m.branch=:branch and m.year=:year and m.materialtype=:materialtype")       
-	List<StudyMaterial> findAllbyType(String program, String branch, String year, String materialtype);
+	@Query("select m from StudyMaterial m where m.program=:program and m.branch=:branch and m.section=:section and m.year=:year and m.materialtype=:materialtype")       
+	List<StudyMaterial> findAllbyType(String program, String branch, String year, String materialtype, String section);
 
 	@Query("select m from StudyMaterial m where m.materialtype=:materialtype")
 	List<StudyMaterial> findByMaterialType(@Param("materialtype") String materialtype);
