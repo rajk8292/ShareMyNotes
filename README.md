@@ -57,13 +57,11 @@ ShareMyNotes/
 │  └─ ShareMyNotesApplication.java
 ├─ src/main/resources/
 │  ├─ templates/ (Thymeleaf)
-│  │  ├─ fragments/
-│  │  ├─ auth/
-│  │  ├─ notes/
-│  │  └─ admin/
+│  │  ├─ admin/
+│  │  └─ student/
 │  ├─ static/ (css, js, images)
 │  └─ application.properties
-├─ uploads/ (local storage; gitignored)
+├─ uploads/ (local storage)
 ├─ pom.xml
 └─ README.md
 ```
@@ -117,7 +115,7 @@ mvn spring-boot:run
 mvn clean package && java -jar target/sharemynotes-*.jar
 ```
 
-Open: [http://localhost:8080](http://localhost:8080)
+Open: [http://localhost:8080](http://localhost:8182)
 
 ### 5) Seed an Admin (example)
 
@@ -127,18 +125,8 @@ If you use a custom `users` table with roles, seed one user:
 INSERT INTO users (name, email, password, role, enabled)
 VALUES ('Admin', 'admin@smn.local', '$2a$10$REPLACE_WITH_BCRYPT', 'ADMIN', true);
 ```
----
 
-# Admin
-GET  /admin             → Admin dashboard
-GET  /admin/notes       → Approvals queue
-```
-
----
-
-## 🧪 Test Users (optional)
-
-* `user@example.com` / `user@123`
+## 🧪 Test Users
 * `admin@example.com` / `admin@123`
 
 > Add them via SQL/migration according to your schema.
