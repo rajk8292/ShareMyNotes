@@ -158,11 +158,9 @@ VALUES ('Admin', 'admin@smn.local', '$2a$10$REPLACE_WITH_BCRYPT', 'ADMIN', true)
 
 ## 🖼️ Screenshots
 
-Add screenshots in `docs/screenshots` and reference them here:
-
 | Home                               | Notes List                         | Upload                                 | Admin                                |
 | ---------------------------------- | ---------------------------------- | -------------------------------------- | ------------------------------------ |
-| static/img/Screenshot%202025-08-28%20113859.png | ![List](docs/screenshots/list.png) | ![Upload](docs/screenshots/upload.png) | ![Admin](docs/screenshots/admin.png) |
+|https://github.com/rajk8292/ShareMyNotes/blob/main/src/main/resources/static/img/Screenshot%202025-08-28%20113859.png | ![List](docs/screenshots/list.png) | ![Upload](docs/screenshots/upload.png) | ![Admin](docs/screenshots/admin.png) |
 ---
 
 ## 🤝 Contributing
