@@ -175,21 +175,8 @@ Add screenshots in `docs/screenshots` and reference them here:
 
 ---
 
-## 🧾 License
-
-MIT License. See [LICENSE](LICENSE).
-
----
-
-## 🙌 Acknowledgements
-
-* Bootstrap, Thymeleaf, Spring Boot community
-* Icons: [Bootstrap Icons](https://icons.getbootstrap.com/)
-
----
-
 ## 📫 Contact
 
 * **Author:** Your Name (replace)
-* **Email:** [your.email@example.com](mailto:your.email@example.com)
-* **Project:** [https://github.com/yourname/ShareMyNotes](https://github.com/yourname/ShareMyNotes)
+* **Email:** [your.email@example.com](mailto:kumarguptaraj825@gmail.com)
+* **Project:** [https://github.com/yourname/ShareMyNotes](https://github.com/raj8292/ShareMyNotes)
