@@ -177,6 +177,6 @@ Add screenshots in `docs/screenshots` and reference them here:
 
 ## 📫 Contact
 
-* **Author:** Your Name (replace)
-* **Email:** [your.email@example.com](mailto:kumarguptaraj825@gmail.com)
-* **Project:** [https://github.com/yourname/ShareMyNotes](https://github.com/raj8292/ShareMyNotes)
+* **Author:** Your Name (Rajkumar Gupta)
+* **Email:** (mailto:kumarguptaraj825@gmail.com)
+* **Project:**(https://github.com/raj8292/ShareMyNotes)
