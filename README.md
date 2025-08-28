@@ -162,7 +162,7 @@ Add screenshots in `docs/screenshots` and reference them here:
 
 | Home                               | Notes List                         | Upload                                 | Admin                                |
 | ---------------------------------- | ---------------------------------- | -------------------------------------- | ------------------------------------ |
-| https://github.com/rajk8292/ShareMyNotes/blob/main/src/main/resources/static/img/Screenshot%202025-08-28%20113859.png | ![List](docs/screenshots/list.png) | ![Upload](docs/screenshots/upload.png) | ![Admin](docs/screenshots/admin.png) |
+| static/img/Screenshot%202025-08-28%20113859.png | ![List](docs/screenshots/list.png) | ![Upload](docs/screenshots/upload.png) | ![Admin](docs/screenshots/admin.png) |
 ---
 
 ## 🤝 Contributing
