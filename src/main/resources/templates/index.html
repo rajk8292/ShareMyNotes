@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to ShareMyNotes</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="shortcut icon" href="img/logo1.png" type="image/x-icon">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e6f0ff;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1.5rem;
+      background: #003399;
+      color: white;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+
+    .navbar-left,
+    .navbar-center,
+    .navbar-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 50px;
+      width: auto;
+      border-radius: 50%;
+    }
+
+    .navbar-center {
+      flex-grow: 1;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .welcome {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .navbar-right ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      margin-bottom: 0;
+    }
+
+    .navbar-right ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .hero-img img {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-admin {
+      background-color: #003399;
+    }
+
+    .btn-admin:hover {
+      background-color: #002080;
+    }
+
+    .btn-student {
+      background-color: #ffcc00;
+      color: #000;
+    }
+
+    .btn-student:hover {
+      background-color: #e6b800;
+    }
+
+    /* About Section */
+    .about {
+      background: white;
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .about h2 {
+      text-align: center;
+      color: #003399;
+      margin-bottom: 1rem;
+    }
+
+    .about p {
+      text-align: justify;
+      font-size: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #003399;
+      color: white;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .navbar-center {
+        order: -1;
+        margin-bottom: 10px;
+      }
+
+      .navbar-right ul {
+        display: none;
+        flex-direction: column;
+        margin-top: 1rem;
+        background: #003399;
+        width: 100%;
+        padding-left: 0;
+      }
+
+      .navbar-right ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar-right {
+        justify-content: flex-end;
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .navbar-right ul {
+        display: flex !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <img src="img/logo1.png" alt="Logo" class="logo-img" />
+    </div>
+
+    <div class="navbar-center">
+      <div class="welcome">Welcome to ShareMyNotes</div>
+    </div>
+
+    <div class="navbar-right">
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <ul id="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/registration">Registration</a></li>
+        <li><a href="/contactus">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-img">
+      <img src="img/logo1.png" alt="Hero Logo">
+    </div>
+    <p>
+      <b>We believe learning is better when shared. Join us and become part of a community where knowledge knows no boundaries.</b>
+    </p>
+    <a href="/adminlogin"><button class="btn btn-admin btn-lg">Teacher Login</button></a>
+    <a href="/stulogin"><button class="btn btn-student btn-lg">Student Login</button></a>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <h2>About ShareMyNotes</h2>
+    <p>
+      ShareMyNote is a simple and smart platform for teachers to share notes, assignments, and study material with students.
+      We aim to make learning more organized, accessible, and interactive.
+      Students can access content anytime, anywhere — on mobile or desktop.
+      Teachers can manage their classes without paperwork or WhatsApp chaos.
+      Made in India 🇮🇳, for schools, colleges, and coaching institutes.
+    </p>
+  </section>
+
+  <!-- Explore Resources Section -->
+  <section class="py-5" style="background-color: #f0f8ff;" id="resources">
+    <div class="container">
+      <h2 class="text-center text-primary fw-bold mb-5">📚 Explore Resources</h2>
+      <div class="row g-4">
+
+        <!-- Notes Card -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card border-0 shadow-lg h-100 rounded-4 text-center">
+            <div class="card-body">
+              <div class="display-4 mb-3">📘</div>
+              <h5 class="card-title text-primary fw-semibold">Notes</h5>
+              <p class="card-text">
+                Get clear, concise and topic-wise notes made by expert teachers to boost your understanding and revision.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Assignments Card -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card border-0 shadow-lg h-100 rounded-4 text-center">
+            <div class="card-body">
+              <div class="display-4 mb-3">📝</div>
+              <h5 class="card-title text-warning fw-semibold">Assignments</h5>
+              <p class="card-text">
+                Download assignments, solve and submit online. Stay updated with your tasks and deadlines.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Important Questions Card -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card border-0 shadow-lg h-100 rounded-4 text-center">
+            <div class="card-body">
+              <div class="display-4 mb-3">❓</div>
+              <h5 class="card-title text-danger fw-semibold">Important Questions</h5>
+              <p class="card-text">
+                Prepare for exams with a curated list of frequently asked and important questions from past papers.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    &copy; 2025 ShareMyNotes - All rights reserved.
+  </footer>
+
+  <!-- Toggle Script -->
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('nav-links');
+      navLinks.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>

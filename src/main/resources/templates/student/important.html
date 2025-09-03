@@ -1,0 +1,110 @@
+<html th:replace="~{student/studentbase::layout(~{::section})}">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .assignment-section {
+      padding: 40px 20px;
+      background-color: #f8f9fa;
+      min-height: 100vh;
+    }
+
+    .table thead {
+      background-color: #0dcaf0;
+      color: white;
+    }
+
+    .table tbody tr:hover {
+      background-color: #e3f2fd;
+    }
+
+    h1.title {
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .download-link {
+      color: #0d6efd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .download-link:hover {
+      text-decoration: underline;
+    }	  <html th:replace="~{student/studentbase::layout(~{::section})}">
+	  <head>
+	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	    <style>
+	      .assignment-section {
+	        padding: 40px 20px;
+	        background-color: #f8f9fa;
+	        min-height: 100vh;
+	      }
+
+	      .table thead {
+	        background-color: #0dcaf0;
+	        color: white;
+	      }
+
+	      /* 🚫 Removed hover effect */
+	      /* .table tbody tr:hover {
+	        background-color: #e3f2fd;
+	      } */
+
+	      h1.title {
+	        font-weight: bold;
+	        margin-bottom: 30px;
+	      }
+
+	      .download-link {
+	        color: #0d6efd;
+	        text-decoration: none;
+	        font-weight: 500;
+	      }
+
+	      .download-link:hover {
+	        text-decoration: underline;
+	      }
+	    </style>
+	  </head>
+
+	  <body>
+	    <section class="assignment-section">
+	      <div class="container">
+	        <h1 class="text-center text-info title">📚 View Assignments</h1>
+
+	        <div class="table-responsive">
+	          <table id="myTable" class="table table-bordered align-middle">
+	            <thead class="text-center">
+	              <tr>
+	                <th>Subject</th>
+	                <th>Unit</th>
+	                <th>Material</th>
+	                <th>Posted Date</th>
+	              </tr>
+	            </thead>
+
+	            <tbody class="text-center">
+	              <tr th:each="s : ${smlist}">
+	                <td th:text="${s.subject}"></td>
+	                <td th:text="${s.topic}"></td>
+	                <td>
+	                  <a th:href="@{'/mat/' + ${s.filename}}" target="_blank" class="download-link">
+	                    <i class="bi bi-file-earmark-arrow-down"></i> 
+	                    <span th:text="${s.filename}"></span>
+	                  </a>
+	                </td>
+	                <td th:text="${s.posteddate}"></td>
+	              </tr>
+	            </tbody>
+	          </table>
+	        </div>
+	      </div>
+	    </section>
+
+	    <!-- Bootstrap Icons -->
+	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+	  </body>
+	  </html>
+
+  </style>
+</head>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{admin/adminbase::layout(~{::section})}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Study Material</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #f8f9fa;
+    }
+    .form-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    .form-control {
+      border-radius: 8px;
+    }
+    h1 {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+<section class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="form-card">
+        <h1 class="text-center text-primary mb-4">📘 Add Study Material</h1>
+
+        <form method="post" th:object="${dto}" enctype="multipart/form-data">
+          <div class="row g-4">
+
+            <!-- Course -->
+            <div class="col-md-6">
+              <label class="form-label">Course</label>
+              <select th:field="*{program}" class="form-select" required>
+                <option value="">-- Select Course --</option>
+                <option value="B.Tech.">B.Tech.</option>
+                <option value="M.Tech.">M.Tech.</option>
+                <option value="B.C.A.">B.C.A.</option>
+                <option value="M.C.A.">M.C.A.</option>
+              </select>
+            </div>
+
+            <!-- Branch -->
+            <div class="col-md-6">
+              <label class="form-label">Branch</label>
+              <select th:field="*{branch}" class="form-select" required>
+                <option value="">-- Select Branch --</option>
+                <option value="Computer Science">CSE</option>
+                <option value="IT">IT</option>
+              </select>
+            </div>
+
+            <!-- Year -->
+            <div class="col-md-6">
+              <label class="form-label">Year</label>
+              <select th:field="*{year}" class="form-select" required>
+                <option value="">-- Select Year --</option>
+                <option value="First year">First Year</option>
+                <option value="Second year">Second Year</option>
+                <option value="Third year">Third Year</option>
+                <option value="Final year">Final Year</option>
+              </select>
+            </div>
+
+            <!-- Subject -->
+            <div class="col-md-6">
+              <label class="form-label">Subject</label>
+              <input type="text" th:field="*{subject}" class="form-control bg-white" placeholder="Enter subject..." required>
+            </div>
+			<div class="col-md-6">
+			              <label class="form-label">Section</label>
+			<input type="text" th:field="*{section}" class="form-control bg-light" placeholder="Enter section..." required>
+			</div>
+
+            <!-- Topic -->
+            <div class="col-md-6">
+              <label class="form-label">Topic / Unit</label>
+              <input type="text" th:field="*{topic}" class="form-control bg-light" placeholder="Enter topic or unit..." required>
+            </div>
+
+            <!-- Material Type -->
+            <div class="col-md-6">
+              <label class="form-label bg-white">Material Type</label>
+              <select th:field="*{materialtype}" class="form-select" required>
+                <option value="">-- Select Type --</option>
+                <option value="studymaterial">Study Material</option>
+                <option value="important">Assignment</option>
+				<option value="important">Important Questions</option>
+              </select>
+            </div>
+
+            <!-- File Upload -->
+            <div class="col-md-12">
+              <label class="form-label">Upload File (PDF/DOC)</label>
+              <input type="file" th:field="*{filename}" class="form-control bg-light" accept=".pdf,.doc,.docx" required>
+            </div>
+
+            <!-- Buttons -->
+            <div class="col-12 text-center mt-3">
+              <button type="reset" class="btn btn-outline-secondary px-4 py-2 me-3">Reset</button>
+              <button type="submit" class="btn btn-primary px-4 py-2">Upload</button>
+            </div>
+
+            <!-- Feedback -->
+            <div class="col-12">
+              <div th:if="${message}" class="alert alert-success text-center mt-4" th:text="${message}"></div>
+              <div th:if="${error}" class="alert alert-danger text-center mt-4" th:text="${error}"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
